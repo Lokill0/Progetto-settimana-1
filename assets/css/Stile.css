@@ -13,7 +13,7 @@ body {
 }
 
 header {
-    background-image: url('header-bg.jpg');
+    background-image: url('../img/header-bg.jpg');
     background-size: cover;
     background-position: center;
     background-color: hsl(220, 60%, 30%);
@@ -22,12 +22,14 @@ header {
     border-bottom: 4px solid hsl(45, 90%, 60%);
     text-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
     padding: 30px 20px 0;
+    position: relative;
+    z-index: 1;
 }
 
 h1,
 h2,
 h3,
-.iniziale {
+.capolettera {
     font-family: 'Playfair Display', Georgia, serif;
 }
 
@@ -37,7 +39,7 @@ header h1 {
     font-style: italic;
 }
 
-header .tagline {
+header .sottotitolo {
     color: #f0e7c8;
     font-style: italic;
 }
@@ -45,6 +47,8 @@ header .tagline {
 nav {
     margin-top: 20px;
     background-color: rgba(0, 0, 0, 0.35);
+    position: relative;
+    z-index: 10;
 }
 
 nav ul {
@@ -66,6 +70,12 @@ nav a {
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+nav a .material-symbols-outlined {
+    vertical-align: middle;
+    font-size: 1.2rem;
+    margin-right: 4px;
+}
+
 nav a:hover {
     color: hsl(220, 60%, 20%);
     background-color: hsl(45, 90%, 60%);
@@ -76,6 +86,8 @@ main {
     width: 90%;
     max-width: 1100px;
     margin: 30px auto;
+    position: relative;
+    z-index: 2;
 }
 
 section {
@@ -85,9 +97,10 @@ section {
     border: 1px solid #e6e0d3;
     border-radius: 8px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    position: relative;
 }
 
-.iniziale {
+.capolettera {
     font-size: 3rem;
     font-weight: bold;
     color: hsl(220, 60%, 30%);
@@ -106,8 +119,12 @@ section h2::before {
     margin-right: 10px;
 }
 
+/* --- EFFETTO SOVRAPPOSIZIONE --- */
+
 #chi-sono {
     text-align: justify;
+    margin-top: -35px;
+    z-index: 5;
 }
 
 #chi-sono p:first-of-type {
@@ -116,13 +133,13 @@ section h2::before {
     color: #315a7d;
 }
 
-.profile-image {
+.foto-profilo {
     float: left;
     margin-right: 25px;
     margin-bottom: 10px;
 }
 
-.profile-image img {
+.foto-profilo img {
     width: 200px;
     height: 200px;
     border-radius: 50%;
@@ -130,9 +147,9 @@ section h2::before {
 }
 
 
-/* COMPETENZE */
+/* SEZIONE COMPETENZE */
 
-.titleo {
+.titolo-secondario {
     margin: 1rem 0 0.6rem;
     font-style: italic;
     color: #8492ad;
@@ -156,11 +173,11 @@ section h2::before {
     vertical-align: middle;
 }
 
-#competenze .tech {
+#competenze .tecnologia {
     width: 50%;
 }
 
-#competenze .tech small {
+#competenze .tecnologia .sotto-testo {
     display: block;
     font-size: 0.8rem;
     font-style: italic;
@@ -181,8 +198,26 @@ section h2::before {
     border-radius: 99px;
 }
 
+/* LIVELLI DELLE BARRE  */
 
-/* ESPERIENZE */
+#competenze .barra span.livello-html {
+    width: 85%;
+}
+
+#competenze .barra span.livello-css {
+    width: 75%;
+}
+
+#competenze .barra span.livello-git {
+    width: 35%;
+}
+
+#competenze .barra span.livello-vscode {
+    width: 80%;
+}
+
+
+/* SEZIONE ESPERIENZE */
 
 #esperienze table {
     width: 100%;
@@ -209,24 +244,24 @@ section h2::before {
 }
 
 
-/* PROGETTI */
+/* SEZIONE PROGETTI */
 
-.project {
+.progetto {
     padding: 20px;
     margin-top: 15px;
     border-left: 4px solid hsl(220, 60%, 30%);
     border-bottom: 1px solid hsl(45, 90%, 50%);
 }
 
-.project:nth-of-type(odd) {
+.progetto:nth-of-type(odd) {
     background-color: #faf8ef;
 }
 
-.project:nth-of-type(even) {
+.progetto:nth-of-type(even) {
     background-color: white;
 }
 
-.project h3 {
+.progetto h3 {
     color: hsl(220, 30%, 25%);
 }
 
@@ -239,11 +274,11 @@ a:hover {
 }
 
 
-/* FORM */
+/* FORM  */
 
 label {
     font-weight: bold;
-    color: #333333;
+    color: #2b2b2b;
 }
 
 input,
@@ -307,4 +342,31 @@ footer {
     text-align: center;
     font-size: 0.9rem;
     padding: 20px;
+}
+
+.contenitore-social {
+    margin-bottom: 10px;
+}
+
+footer .icona-social {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.08);
+    color: white;
+    border-radius: 50%;
+    margin: 0 5px;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+footer .icona-social i {
+    vertical-align: middle;
+}
+
+footer .icona-social:hover {
+    color: hsl(220, 60%, 20%);
+    background-color: hsl(45, 90%, 60%);
 }
